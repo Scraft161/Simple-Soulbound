@@ -1,0 +1,12 @@
+name: SimpleSoulbound
+main: dev.scraft.SimpleSoulbound.Plugin
+version: 0.0.1
+author: Scraft161
+depend:
+  - ProtocolLib
+commands:
+  ssb:
+    description: SimpleSoulbound management command.
+    usage: /ssb <subcommand>
+    permission: ssb.command
+    permission-message: &cYou do not have permission!
