@@ -8,7 +8,6 @@ import net.minecraft.world.item.enchantment.EnchantmentCategory;
 import org.bukkit.NamespacedKey;
 import org.mineacademy.fo.enchant.NmsEnchant;
 import org.mineacademy.fo.enchant.SimpleEnchantment;
-import org.mineacademy.fo.enchant.SimpleEnchantmentRarity;
 
 public class CustomEnchant_v1_20_4 extends Enchantment implements NmsEnchant {
 

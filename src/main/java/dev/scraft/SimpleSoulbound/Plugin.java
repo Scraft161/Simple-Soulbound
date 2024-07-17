@@ -1,17 +1,18 @@
 package dev.scraft.SimpleSoulbound;
 
 import dev.scraft.nms.specific.enchant.CustomEnchant_v1_20_4;
+import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
+import org.jetbrains.annotations.NotNull;
 import org.mineacademy.fo.enchant.SimpleEnchantment;
 import org.mineacademy.fo.plugin.SimplePlugin;
+
 
 public final class Plugin extends SimplePlugin {
 
     @Override
     public void onPluginLoad() {
-        // Register on_death and on_respawn events
-        getLogger().info("Registering event hooks.");
 
         getLogger().info("Registering Enchantments");
 
@@ -19,12 +20,15 @@ public final class Plugin extends SimplePlugin {
     }
 
     @Override
-    protected void onPluginStart() {
+    public void onPluginStart() {
+        // Register on_death and on_respawn events
+        getLogger().info("Registering event hooks.");
 
+        Bukkit.getServer().getPluginManager().registerEvents(new PlayerListener(), this);
     }
 
     @Override
-    public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
+    public boolean onCommand(CommandSender sender, @NotNull Command cmd, String label, String[] args) {
         if (cmd.getName().equalsIgnoreCase("ssb")) {
 
             switch(args[0]) {
@@ -41,3 +45,4 @@ public final class Plugin extends SimplePlugin {
         return false;
     }
 }
+
