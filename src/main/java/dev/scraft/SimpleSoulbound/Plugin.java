@@ -30,6 +30,10 @@ public final class Plugin extends SimplePlugin {
     @Override
     public boolean onCommand(CommandSender sender, @NotNull Command cmd, String label, String[] args) {
         if (cmd.getName().equalsIgnoreCase("ssb")) {
+            if (args.length > 1) {
+                sender.sendMessage("Incorrect usage, type /ssb help for help");
+                return true;
+            }
 
             switch(args[0]) {
                 case "version":

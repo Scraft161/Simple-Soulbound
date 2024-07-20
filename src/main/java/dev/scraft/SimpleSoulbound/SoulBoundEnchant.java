@@ -21,4 +21,14 @@ public final class SoulBoundEnchant extends SimpleEnchantment {
     public int getMaxCost(int level) {
         return 30;
     }
+
+    @Override
+    public boolean isDiscoverable() {
+        return false;
+    }
+
+    @Override
+    public boolean isTreasure() {
+        return true;
+    }
 }
